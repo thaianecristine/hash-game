@@ -1,36 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import Square from "./componentes/square";
+import Board from "./componentes/board";
 import "./index.css";
-
-const Board = () => {
-  const renderSquare = () => {
-    return <Square />;
-  };
-
-  const status = "Next player: X";
-
-  return (
-    <div>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-    </div>
-  );
-};
 
 const Game = () => {
   return (
