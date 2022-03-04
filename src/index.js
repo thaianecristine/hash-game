@@ -1,47 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import Board from "./componentes/board";
 import "./index.css";
-
-const Square = () => {
-  const [value, setValue] = useState(null) 
-  const handleClick = () => {
-    setValue("x")
-  };
-  return (
-    <button className="square" onClick={handleClick}>
-      {value}
-    </button>
-  );
-};
-
-const Board = () => {
-  const renderSquare = () => {
-    return <Square />;
-  };
-
-  const status = "Next player: X";
-
-  return (
-    <div>
-      <div className="status">{status}</div>
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-    </div>
-  );
-};
 
 const Game = () => {
   return (
