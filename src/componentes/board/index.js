@@ -1,5 +1,7 @@
 import React from "react";
+
 import Square from "../square";
+
 import "../board/board.css";
 
 const Board = () => {

@@ -1,6 +1,9 @@
 import React from "react";
+
 import Board from "../board";
+
 import "../game/game.css";
+
 const Game = () => {
   return (
     <div className="game">
