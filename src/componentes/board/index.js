@@ -1,7 +1,5 @@
 import React from "react";
-
 import Square from "../square";
-
 import "../board/board.css";
 
 const Board = () => {
@@ -19,11 +17,13 @@ const Board = () => {
         {renderSquare()}
         {renderSquare()}
       </div>
+      
       <div className="board-row">
         {renderSquare()}
         {renderSquare()}
         {renderSquare()}
       </div>
+
       <div className="board-row">
         {renderSquare()}
         {renderSquare()}

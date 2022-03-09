@@ -1,7 +1,5 @@
 import React from "react";
-
 import Board from "../board";
-
 import "../game/game.css";
 
 const Game = () => {
@@ -10,6 +8,7 @@ const Game = () => {
       <div className="game-board">
         <Board />
       </div>
+      
       <div className="game-info">
         <div>{/* status */}</div>
         <ol>{/* TODO */}</ol>
