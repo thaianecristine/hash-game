@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Square from "../square";
 import "../board/board.css";
 
 const Board = () => {
-  const renderSquare = () => {
-    return <Square />;
+  const renderSquare = (i) => {
+    const handleClick = () => {
+      const newSquares = squares.slice()
+      newSquares[i] = "x"
+      setSquares(newSquares)
+    }
+
+    return (
+      <Square 
+        value={squares[i]} 
+        onClick={handleClick} 
+      />
+    )
   };
+  const [squares, setSquares] = useState(Array(9).fill(null));
 
   const status = "Next player: X";
 
@@ -13,21 +25,21 @@ const Board = () => {
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
-      </div>
-      
-      <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
+        {renderSquare(0)}
+        {renderSquare(1)}
+        {renderSquare(2)}
       </div>
 
       <div className="board-row">
-        {renderSquare()}
-        {renderSquare()}
-        {renderSquare()}
+        {renderSquare(3)}
+        {renderSquare(4)}
+        {renderSquare(5)}
+      </div>
+
+      <div className="board-row">
+        {renderSquare(6)}
+        {renderSquare(7)}
+        {renderSquare(8)}
       </div>
     </div>
   );
