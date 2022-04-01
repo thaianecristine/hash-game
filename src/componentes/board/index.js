@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Square from "../square";
 import "../board/board.css";
 
-// combinaçoes de acertos para gerar o vencedor 
+// combinaçoes de acertos para gerar o vencedor
 const calculeVencedor = (squares) => {
   const linhas = [
     [0, 1, 2],
@@ -16,12 +16,12 @@ const calculeVencedor = (squares) => {
   ];
 
   for (let i = 0; i < linhas.length; i++) {
-    const [a, b, c] = linhas[i]
+    const [a, b, c] = linhas[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a]
+      return squares[a];
     }
-  } 
-  return null
+  }
+  return null;
 };
 
 // Para fazer alterações entre X e O, e "bloquear" alterações nos elementos
@@ -41,18 +41,18 @@ const Board = () => {
   };
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
-  
+
   // Printar se chegou o vencedor ou se ainda tem mais uma rodada
-  const vencedor = calculeVencedor(squares) 
+  const vencedor = calculeVencedor(squares);
   let status;
-  if (vencedor){
-    status= `Vencedor ${vencedor}`
+  if (vencedor) {
+    status = `Vencedor ${vencedor}`;
   } else {
-      status = `Próximo Jogador: ${xIsNext ? "x" : "o"}`;
+    status = `Próximo Jogador: ${xIsNext ? "x" : "o"}`;
   }
 
   return (
-      // Posição de jogadas
+    // Posição de jogadas
     <div>
       <div className="status">{status}</div>
       <div className="board-row">
